@@ -43,12 +43,12 @@ class TrafficLights(object):
     def red_only(self):
         self.set_lights(OFF, OFF, ON)
     
-    def blink(self, light, x):
+    def blink(self, light, x, duration=0.05):
         for _ in range(x):
             self.set_light(light, ON)
-            time.sleep(0.05)
+            time.sleep(duration)
             self.set_light(light, OFF)
-            time.sleep(0.05)
+            time.sleep(duration)
     
     def blink_green(self, x):
         self.blink(GREEN, x)
